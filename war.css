@@ -1,0 +1,70 @@
+body
+{
+  background-color: black;
+}
+#top
+{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  font-size: 4em;
+  color: #ff0000;
+}
+#twoButtons
+{
+  position: absolute;
+  margin-top: 10%;
+  left: 0px;
+  top: 0px;
+  text-align: center;
+  width: 100%;
+  font-size: 3em;
+}
+#play
+{
+  color: #0066ff;
+  /*position: absolute;*/
+  /*margin-top: 15%;*/
+  padding-right: 2em;
+}
+#play:hover
+{
+  cursor: pointer;
+}
+#instructions
+{
+  color: #00ff00;
+}
+#instructions:hover
+{
+  cursor: pointer;
+}
+#board
+{
+  position: absolute;
+  margin-top: 15%;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+#compDeck
+{
+
+}
+#playerDeck
+{
+
+}
+#compCard
+{
+
+}
+#playerCard
+{
+
+}
