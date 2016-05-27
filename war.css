@@ -41,6 +41,17 @@ body
 {
   cursor: pointer;
 }
+#instructionsText
+{
+  position: absolute;
+  margin-top: 20%;
+  left: 10%;
+  top: 0px;
+  text-align: center;
+  width: 80%;
+  font-size: 2em;
+  color: white;
+}
 #board
 {
   position: absolute;
@@ -54,17 +65,17 @@ body
 }
 #compDeck
 {
-
-}
-#playerDeck
-{
-
+  position: absolute;
 }
 #compCard
 {
-
+  position: absolute;
+}
+#playerDeck
+{
+  position: absolute;
 }
 #playerCard
 {
-
+  position: absolute;
 }
