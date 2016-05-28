@@ -93,46 +93,65 @@ function assignCards(mainDeck)
   console.log(playerArray.length);
   console.log(playerArray);
 }
-function chooseRandomCard(array)
+function chooseRandomCard()
 {
-
-}
-function checkHigher(compCard, playerCard)
-{
-  var compValue=0;
-  var playerValue=0;
-  for (var i=0; i<2; i++)
+  var pCard = Math.floor(Math.random() * playerArray.length);
+  var cCard = Math.floor(Math.random() * compArray.length);
+  var pValue = checkValue(playerArray[pCard]);
+  var cValue = checkValue(compArray[cCard]);
+  console.log(pValue);
+  console.log(cValue);
+  if (pValue > cValue)
   {
-    if(i===0)
-      card=compCard;
-    else if (i===1)
-      card=playerCard;
-
-    if(card.indexOf("Two") !== -1)
-    compValue=2;
-    if(card.indexOf("Three") !== -1)
-    compValue=3;
-    if(card.indexOf("Four") !== -1)
-    compValue=4;
-    if(card.indexOf("Five") !== -1)
-    compValue=5;
-    if(card.indexOf("Six") !== -1)
-    compValue=6;
-    if(card.indexOf("Seven") !== -1)
-    compValue=7;
-    if(card.indexOf("Eight") !== -1)
-    compValue=8;
-    if(card.indexOf("Nine") !== -1)
-    compValue=9;
-    if(card.indexOf("Jack") !== -1)
-    compValue=10;
-    if(card.indexOf("Queen") !== -1)
-    compValue=11;
-    if(card.indexOf("King") !== -1)
-    compValue=12;
-    if(card.indexOf("Ace") !== -1)
-    compValue=13;
+    console.log("player wins");
+    playerArray.push(compArray[cCard]);
+    compArray.splice(cCard, 1);
+    console.log("compArray: "+compArray.length);
+    console.log("playerArray: "+playerArray.length);
   }
+  else if (cValue > pValue)
+  {
+    console.log("comp wins");
+    compArray.push(playerArray[pCard]);
+    playerArray.splice(pCard, 1);
+    console.log("compArray: "+compArray.length);
+    console.log("playerArray: "+playerArray.length);
+  }
+  else
+  {
+    console.log("equal");
+    console.log("compArray: "+compArray.length);
+    console.log("playerArray: "+playerArray.length);
+  }
+}
+function checkValue(card)
+{
+  var cardValue=0;
+  if(card.indexOf("Two") !== -1)
+    cardValue=2;
+  if(card.indexOf("Three") !== -1)
+    cardValue=3;
+  if(card.indexOf("Four") !== -1)
+    cardValue=4;
+  if(card.indexOf("Five") !== -1)
+    cardValue=5;
+  if(card.indexOf("Six") !== -1)
+    cardValue=6;
+  if(card.indexOf("Seven") !== -1)
+    cardValue=7;
+  if(card.indexOf("Eight") !== -1)
+    cardValue=8;
+  if(card.indexOf("Nine") !== -1)
+    cardValue=9;
+  if(card.indexOf("Jack") !== -1)
+    cardValue=10;
+  if(card.indexOf("Queen") !== -1)
+    cardValue=11;
+  if(card.indexOf("King") !== -1)
+    cardValue=12;
+  if(card.indexOf("Ace") !== -1)
+    cardValue=13;
+  return cardValue;
 }
 function playGame()
 {
@@ -156,6 +175,10 @@ function createBoard()
   draw = document.createElement("div");
   draw.setAttribute("id", "draw");
   draw.innerHTML="Draw";
+  draw.addEventListener("click", function()
+  {
+    chooseRandomCard();
+  });
   board.appendChild(compDeck);
   board.appendChild(compCard);
   board.appendChild(playerCard);

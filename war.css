@@ -102,5 +102,8 @@ body
   height: 4vw;
   left: 50%;
   border: 2px solid white;
-
+}
+#draw:hover
+{
+  cursor: pointer;
 }
