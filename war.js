@@ -38,7 +38,7 @@ function createInstructions()
 {
   var instructionsText = document.createElement("div");
   instructionsText.setAttribute("id", "instructionsText");
-  instructionsText.innerHTML="Draw cards to play the game. The player with the higher card value keeps both cards. If both cards have the same value each card goes back to its original owner. The game ends when one player has all of the cards.";
+  instructionsText.innerHTML="Your deck and card that you play are on the bottom half of the screen. Draw cards to play the game. The player with the higher card value keeps both cards. If both cards have the same value each card goes back to its original owner. The game ends when one player has all of the cards.";
   body.appendChild(instructionsText);
 }
 function createDeck()
@@ -99,6 +99,8 @@ function chooseRandomCard()
   var cCard = Math.floor(Math.random() * compArray.length);
   var pValue = checkValue(playerArray[pCard]);
   var cValue = checkValue(compArray[cCard]);
+  playerCard.innerHTML=playerArray[pCard];
+  compCard.innerHTML=compArray[cCard];
   console.log(pValue);
   console.log(cValue);
   if (pValue > cValue)
@@ -122,6 +124,41 @@ function chooseRandomCard()
     console.log("equal");
     console.log("compArray: "+compArray.length);
     console.log("playerArray: "+playerArray.length);
+  }
+  // playerArray=[];
+  playerDeck.innerHTML=playerArray.length;
+  compDeck.innerHTML=compArray.length;
+  if (playerArray.length === 0)
+  {
+    board.parentNode.removeChild(board);
+    var result = document.createElement("div");
+    result.setAttribute("id", "instructionsText");
+    result.innerHTML="Computer wins!";
+    var playAgain = document.createElement("div");
+    playAgain.setAttribute("id", "playAgain");
+    playAgain.innerHTML="Play Again?";
+    playAgain.addEventListener("click", function()
+    {
+      location.reload();
+    });
+    body.appendChild(playAgain);
+    body.appendChild(result);
+  }
+  else if (compArray.length === 0)
+  {
+    board.parentNode.removeChild(board);
+    var result = document.createElement("div");
+    result.setAttribute("id", "instructionsText");
+    result.innerHTML="You win!";
+    var playAgain = document.createElement("div");
+    playAgain.setAttribute("id", "playAgain");
+    playAgain.innerHTML="Play Again?";
+    playAgain.addEventListener("click", function()
+    {
+      location.reload();
+    });
+    body.appendChild(playAgain);
+    body.appendChild(result);
   }
 }
 function checkValue(card)
@@ -166,12 +203,14 @@ function createBoard()
   board.setAttribute("id", "board")
   compDeck = document.createElement("div");
   compDeck.setAttribute("id", "compDeck");
+  compDeck.innerHTML="26";
   compCard = document.createElement("div");
   compCard.setAttribute("id", "compCard");
   playerCard = document.createElement("div");
   playerCard.setAttribute("id", "playerCard");
   playerDeck = document.createElement("div");
   playerDeck.setAttribute("id", "playerDeck");
+  playerDeck.innerHTML="26";
   draw = document.createElement("div");
   draw.setAttribute("id", "draw");
   draw.innerHTML="Draw";

@@ -52,6 +52,21 @@ body
   font-size: 2em;
   color: white;
 }
+#playAgain
+{
+  position: absolute;
+  margin-top: 30%;
+  left: 10%;
+  top: 0px;
+  text-align: center;
+  width: 80%;
+  font-size: 2em;
+  color: #ffff00;
+}
+#playAgain:hover
+{
+  cursor: pointer;
+}
 #board
 {
   position: absolute;
@@ -70,22 +85,34 @@ body
   height: 9vw;
   left: 20%;
   border: 2px solid white;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 #compCard
 {
   position: relative;
   width: 6vw;
   height: 9vw;
-  left: 50%;
+  left: 47.5%;
   border: 2px solid white;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 #playerCard
 {
   position: relative;
   width: 6vw;
   height: 9vw;
-  left: 50%;
+  left: 47.5%;
   border: 2px solid white;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 #playerDeck
 {
@@ -94,14 +121,22 @@ body
   height: 9vw;
   left: 80%;
   border: 2px solid white;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 #draw
 {
   position: relative;
   width: 6vw;
   height: 4vw;
-  left: 50%;
+  left: 47.5%;
   border: 2px solid white;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 #draw:hover
 {
