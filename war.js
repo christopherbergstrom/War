@@ -8,6 +8,7 @@ var compCard;
 var playerDeck;
 var playerArray=[];
 var playerCard;
+var draw;
 
 window.onload=function()
 {
@@ -24,16 +25,6 @@ window.onload=function()
     removeInstructions();
     createInstructions();
   });
-  board = document.createElement("div");
-  board.setAttribute("id", "board")
-  compDeck = document.createElement("div");
-  compDeck.setAttribute("id", "compDeck");
-  compCard = document.createElement("div");
-  compCard.setAttribute("id", "compCard");
-  playerDeck = document.createElement("div");
-  playerDeck.setAttribute("id", "playerDeck");
-  playerCard = document.createElement("div");
-  playerCard.setAttribute("id", "playerCard");
 };
 function removeInstructions()
 {
@@ -148,4 +139,27 @@ function playGame()
   var twoButtons=document.getElementById("twoButtons");
   twoButtons.parentNode.removeChild(twoButtons);
   createDeck();
+  createBoard();
+}
+function createBoard()
+{
+  board = document.createElement("div");
+  board.setAttribute("id", "board")
+  compDeck = document.createElement("div");
+  compDeck.setAttribute("id", "compDeck");
+  compCard = document.createElement("div");
+  compCard.setAttribute("id", "compCard");
+  playerCard = document.createElement("div");
+  playerCard.setAttribute("id", "playerCard");
+  playerDeck = document.createElement("div");
+  playerDeck.setAttribute("id", "playerDeck");
+  draw = document.createElement("div");
+  draw.setAttribute("id", "draw");
+  draw.innerHTML="Draw";
+  board.appendChild(compDeck);
+  board.appendChild(compCard);
+  board.appendChild(playerCard);
+  board.appendChild(playerDeck);
+  board.appendChild(draw);
+  body.appendChild(board);
 }

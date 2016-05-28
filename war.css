@@ -55,7 +55,7 @@ body
 #board
 {
   position: absolute;
-  margin-top: 15%;
+  margin-top: 5%;
   left: 0px;
   top: 0px;
   bottom: 0px;
@@ -65,17 +65,42 @@ body
 }
 #compDeck
 {
-  position: absolute;
+  position: relative;
+  width: 6vw;
+  height: 9vw;
+  left: 20%;
+  border: 2px solid white;
 }
 #compCard
 {
-  position: absolute;
-}
-#playerDeck
-{
-  position: absolute;
+  position: relative;
+  width: 6vw;
+  height: 9vw;
+  left: 50%;
+  border: 2px solid white;
 }
 #playerCard
 {
-  position: absolute;
+  position: relative;
+  width: 6vw;
+  height: 9vw;
+  left: 50%;
+  border: 2px solid white;
+}
+#playerDeck
+{
+  position: relative;
+  width: 6vw;
+  height: 9vw;
+  left: 80%;
+  border: 2px solid white;
+}
+#draw
+{
+  position: relative;
+  width: 6vw;
+  height: 4vw;
+  left: 50%;
+  border: 2px solid white;
+
 }
