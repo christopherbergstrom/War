@@ -125,7 +125,7 @@ function chooseRandomCard()
     console.log("compArray: "+compArray.length);
     console.log("playerArray: "+playerArray.length);
   }
-  // playerArray=[];
+  // compArray=[];
   playerDeck.innerHTML=playerArray.length;
   compDeck.innerHTML=compArray.length;
   if (playerArray.length === 0)
