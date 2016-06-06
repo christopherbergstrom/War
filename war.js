@@ -183,13 +183,13 @@ function checkValue(card)
   if(card.indexOf("Ten") !== -1)
     cardValue=10;
   if(card.indexOf("Jack") !== -1)
-    cardValue=10;
-  if(card.indexOf("Queen") !== -1)
     cardValue=11;
-  if(card.indexOf("King") !== -1)
+  if(card.indexOf("Queen") !== -1)
     cardValue=12;
-  if(card.indexOf("Ace") !== -1)
+  if(card.indexOf("King") !== -1)
     cardValue=13;
+  if(card.indexOf("Ace") !== -1)
+    cardValue=14;
   return cardValue;
 }
 function playGame()
