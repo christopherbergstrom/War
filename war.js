@@ -180,6 +180,8 @@ function checkValue(card)
     cardValue=8;
   if(card.indexOf("Nine") !== -1)
     cardValue=9;
+  if(card.indexOf("Ten") !== -1)
+    cardValue=10;
   if(card.indexOf("Jack") !== -1)
     cardValue=10;
   if(card.indexOf("Queen") !== -1)
